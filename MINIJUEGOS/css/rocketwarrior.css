@@ -4,5 +4,5 @@ body {
 }
 
 #tablero {
-    background-image: url("/img/rocketbg.png");
+    background-image: url("../img/rocketbg.png");
 }
