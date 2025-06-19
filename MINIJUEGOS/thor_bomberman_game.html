@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thor's Lightning Maze</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Thor's Lightning Maze</h1>
+            <div class="game-info">
+                <div class="lives">Vidas: <span id="lives">3</span></div>
+                <div class="level">Nivel: <span id="level">1</span></div>
+                <div class="score">Puntos: <span id="score">0</span></div>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="game-controls">
+            <p><strong>Controles:</strong></p>
+            <p>WASD o Flechas - Mover | Espacio - Colocar Rayo | R - Reiniciar</p>
+        </div>
+        
+        <div class="game-instructions">
+            <h3>Instrucciones:</h3>
+            <p>Ayuda a Thor a llegar a Asgard (casa dorada) esquivando enemigos y destruyendo paredes con rayos.</p>
+            <p>¡Las paredes destructibles cambian de posición en cada nivel!</p>
+        </div>
+    </div>
+
+    <script src="/js/game1.js"></script>
+</body>
+</html>
