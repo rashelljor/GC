@@ -1,0 +1,8 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#tablero {
+    background-image: url("/img/rocketbg.png");
+}

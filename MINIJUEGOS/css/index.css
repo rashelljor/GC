@@ -1,0 +1,93 @@
+body {
+    margin: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    /* Cambia el color del texto para mejor lectura */
+}
+
+.contenedor-juegos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* Espacio entre los cuadros */
+}
+
+.copperplate {
+    font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+    /* Intenta con Copperplate o Copperplate Gothic Light */
+}
+
+/* Estilos para el cuadro */
+.cuadro {
+    border: 2px solid #ffffff;
+    /* Color de borde blanco */
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    /* Añadido para usar flexbox */
+    flex-direction: column;
+    /* Organiza los hijos verticalmente */
+    justify-content: space-between;
+    /* Alinea hijos al principio y al final */
+}
+
+/* Estilos para la imagen */
+.imagen {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el botón */
+.boton {
+    background-color: transparent;
+    /* Fondo transparente */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dialogo-modal-arriba-derecha {
+    position: fixed;
+    top: 20px;
+    /* Asegúrate de que no esté demasiado arriba */
+    right: 20px;
+    margin: 0;
+    width: auto;
+    max-width: 100%;
+    /* Asegúrate de que no exceda el ancho de la pantalla */
+    overflow-y: auto;
+    /* Permite desplazamiento vertical si es necesario */
+}
+
+.contenido-modal {
+    background-color: #333;
+    /* Fondo más oscuro para mejor visibilidad */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* Bordes redondeados para estética */
+    overflow-y: auto;
+    /* Habilita desplazamiento dentro del contenido del modal */
+    max-height: 80vh;
+    /* Máxima altura del modal */
+}
+
+.logo-esquina {
+    position: absolute;
+    /* Esto asegura que el logo esté posicionado relativo a su contenedor padre */
+    top: 20px;
+    /* Ajusta la posición vertical según tu preferencia */
+    left: 20px;
+    /* Ajusta la posición horizontal según tu preferencia */
+    z-index: 1050;
+    /* Asegura que el logo esté por encima de otros elementos */
+    width: 140px;
+    /* Ajusta el ancho de la imagen */
+    height: auto;
+    /* Esto asegura que la altura se ajuste proporcionalmente */
+}
