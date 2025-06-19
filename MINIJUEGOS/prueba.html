@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voltage Anomaly</title>
+    <title>Glitch Core</title>
     <link rel="icon" type="image/x-icon" href="assets/portal.png" />
      <!-- Funcionalidades jQuery. Este script proporciona funcionalidades adicionales y simplifica el manejo del DOM en JavaScript. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -16,15 +16,51 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 
+<head>
+    <style>
+        .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: left; 
+            gap: 100px; /* Espaciado entre la imagen y el texto */
+        }
+
+        .imagen-title {
+            width: 650px; /* Ancho específico */
+            height: auto; /* Mantén la proporción */
+            }
+
+        .imagen-sub {
+            width: 350px; /* Ancho específico */
+            height: auto; /* Mantén la proporción */
+            }
+
+        #imagenSub {
+            position: absolute; /* Permite posicionar la imagen en coordenadas específicas */
+            top: 110px; /* Distancia desde la parte superior */
+            right: -28px; /* Distancia desde la parte izquierda */
+        }
+    </style>
 </head>
+
+<body>
+    <div class="imagen-sub-container">
+        <img src="assets/title.png" alt="title" class="imagen-title">
+    </div>
+</body>
+
 
 <body>
 
     <!-- Botón para abrir el modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comentariosModal"
-        style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
-        Deja un Comentario
-    </button>
+        style="position: fixed; top: 20px; right: 20px; z-index: 1050; background: none; border: none; padding: 0;">
+        <img src="assets/comment.png" alt="Deja un Comentario" style="width: 250px; height: auto; cursor: pointer;">
+    </button><br>
+
+    <div style="margin-top: 10px; text-align: right;">
+        <img src="assets/sub.png" alt="textobreve" class="imagen-sub" id="imagenSub">
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="comentariosModal" tabindex="-1" aria-labelledby="comentariosModalLabel"
@@ -128,25 +164,7 @@
             });
         </script>
 
-        <br>
-
-        <h1 class="copperplate">
-            JUEGOS EN LÍNEA UC
-        </h1>
-
-        <br>
-
-        <h4 class="copperplate">
-            ¡Bienvenidos a Juegos en Línea UC!
-        </h4>
-
-        <br>
-
-        <p class="copperplate"> ¿Estás listo para sumergirte en un mundo lleno de emocionantes desafíos, aventuras y
-            entretenimiento?
-            ¡Entonces has llegado al lugar correcto! En nuestra plataforma, encontrarás una amplia variedad de
-            juegos para todos los gustos y edades. Desde juegos de acción hasta rompecabezas cerebrales, tenemos
-            algo para cada jugador.</p><br>
+    
 
         <div class="contenedor-juegos">
 

@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Glitchcore Start</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glitch Core</title>
+    <link rel="icon" type="image/x-icon" href="assets/head.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Courier New', monospace;
-    }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        font-family: "Courier New", monospace;
+      }
 
-    body {
-  background-color: black;
-  background-image: url("img/mainmenu.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 1920px px; /* Aquí defines el tamaño exacto en píxeles */
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      body {
+        background-color: black;
+        background-image: url("img/mainmenu.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain; /* Escala la imagen proporcionalmente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .start-button-container {
-      position: absolute;
-      top: 48.2%; /* ajustado al centro entre los dos botones falsos */
-      left: 64.5%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-    }
+      .start-button-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .start-button-container img {
-      width: 320px;
-      height: 90px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
+      .start-button-container img {
+        width: 58%;
+        max-width: 215px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
 
-    .start-button-container img:hover {
-      transform: scale(1.08);
-    }
-  </style>
-</head>
-<body>
-
-  <div class="start-button-container">
-    <a href="index.html">
-      <img src="img/start.png" alt="Start Game"/>
-    </a>
-  </div>
-
-</body>
+      .start-button-container img:hover {
+        transform: scale(1.08);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="start-button-container">
+      <a href="index.html">
+        <img src="img/start.png" alt="Start Game" />
+      </a>
+    </div>
+  </body>
 </html>
