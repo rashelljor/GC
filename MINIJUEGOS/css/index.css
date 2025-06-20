@@ -1,13 +1,15 @@
 body {
+    background-color: black;
     margin: 20px;
     font-size: 18px;
     line-height: 1.6;
-    color: white;
+    color: rgb(255, 255, 255);
     /* Cambia el color del texto para mejor lectura */
 }
 
 .contenedor-juegos {
     display: flex;
+    width: 100%;
     justify-content: center;
     gap: 15px;
     /* Espacio entre los cuadros */
@@ -18,15 +20,17 @@ body {
     /* Intenta con Copperplate o Copperplate Gothic Light */
 }
 
+
 /* Estilos para el cuadro */
 .cuadro {
     border: 2px solid #ffffff;
     /* Color de borde blanco */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     width: 300px;
     text-align: center;
     margin: 0 auto;
-    display: flex;
+    display: inline-block;
     /* Añadido para usar flexbox */
     flex-direction: column;
     /* Organiza los hijos verticalmente */
@@ -36,7 +40,7 @@ body {
 
 /* Estilos para la imagen */
 .imagen {
-    max-width: 100%;
+    width: 180px;
     height: auto;
 }
 

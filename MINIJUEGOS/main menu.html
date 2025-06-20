@@ -6,6 +6,17 @@
     <title>Glitch Core</title>
     <link rel="icon" type="image/x-icon" href="assets/head.png" />
     <style>
+      /* Estilos generales */
+      .pantalla-limitada {
+        max-width: 1280px;   /* Cambia el ancho máximo según lo que necesites */
+        max-height: 720px;   /* Cambia el alto máximo según lo que necesites */
+        margin: 40px auto;   /* Centra el contenedor horizontalmente */
+        overflow: auto;      /* Agrega scroll si el contenido se desborda */
+        background: transparent; /* O el color que prefieras */
+        position: relative;
+        border-radius: 20px;
+      }
+      
       * {
         margin: 0;
         padding: 0;
@@ -52,10 +63,12 @@
     </style>
   </head>
   <body>
-    <div class="start-button-container">
-      <a href="index.html">
+    <div class="pantalla-limitada">
+      <div class="start-button-container">
+      <a href="prueba.html">
         <img src="img/start.png" alt="Start Game" />
       </a>
+      </div>
     </div>
   </body>
 </html>
