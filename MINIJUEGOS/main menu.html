@@ -6,70 +6,124 @@
     <title>Glitch Core</title>
     <link rel="icon" type="image/x-icon" href="assets/head.png" />
     <style>
-      /* Estilos generales */
-      .pantalla-limitada {
-        max-width: 1280px;   /* Cambia el ancho máximo según lo que necesites */
-        max-height: 720px;   /* Cambia el alto máximo según lo que necesites */
-        margin: 40px auto;   /* Centra el contenedor horizontalmente */
-        overflow: auto;      /* Agrega scroll si el contenido se desborda */
-        background: transparent; /* O el color que prefieras */
-        position: relative;
-        border-radius: 0px;
-      }
-      
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      html,
-      body {
+      html, body {
         height: 100%;
         width: 100%;
-        overflow: hidden;
         font-family: "Courier New", monospace;
       }
 
       body {
+        min-height: 100vh;
+        min-width: 100vw;
         background-color: black;
         background-image: url("img/mainmenu.png");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: contain; /* Escala la imagen proporcionalmente */
+        background-size: cover;
         display: flex;
-        justify-content: center;
-        align-items: center;
       }
 
-      .start-button-container {
+      .main-container {
+        display: flex;
+        gap: 60px;
+        padding: 40px 60px;
+        width: 50%;    /* Controla el ancho total del contenedor principal */
+        height: auto;   /* Controla la altura total del contenedor principal */
+        justify-content: center;
+        align-items: center;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 1310px;
+        top: 50px;
+        
       }
 
-      .start-button-container img {
-        width: 25%;
-        max-width: 35%;
+      .image-group {
+        width: auto;    /* Controla el ancho de cada grupo */
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+        position: fixed;
+        top:20px;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .image-group2 {
+        width: auto;    /* Controla el ancho de cada grupo */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 52%;
+        z-index: 1000;
+        
+      }
+
+      .image-group2 img {
+        width: 550px;
         height: auto;
         cursor: pointer;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s;
       }
 
-      .start-button-container img:hover {
+      .image-group img {
+        width: 200px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .image-group img:hover {
         transform: scale(1.08);
       }
+
+      .image-group2 img:hover {
+        transform: scale(1.08);
+      }
+
+      .top-center-img {
+        position: fixed;
+        top: 0;
+        left: 60%;
+        transform: translateX(-50%);
+        width: 1120px;    /* Ajusta el tamaño según necesites */
+        height: auto;
+        z-index: 2000;   /* Asegura que esté por encima de otros elementos */
+        margin-top: 10px; /* Opcional: separa un poco del borde superior */
+      }
+
     </style>
   </head>
   <body>
-    
-      <div class="start-button-container">
-      <a href="prueba.html">
-        <img src="img/start.png" alt="Start Game" />
-      </a>
+    <img src="assets/title.png" alt="Imagen centrada arriba"
+     class="top-center-img" />
+    <div class="main-container">
+      <div class="image-group">
+        <img src="assets/settingsBtn.png" alt="Imagen 1" />
+        <img src="assets/soundBtn.png" alt="Imagen 2" />
+        <img src="assets/musicBtn.png" alt="Imagen 3" />
       </div>
-    
+      <div class="image-group2">
+        <img src="assets/singinBtn.png" alt="Imagen 4" />
+        <div class="start-button-container">
+            <a href="prueba.html">
+                <img src="assets/startBtn.png" alt="Imagen 5" />
+            </a>
+        </div>
+        <img src="assets/howtoplayBtn.png" alt="Imagen 6" />
+      </div>
+    </div>
+
+
   </body>
 </html>
