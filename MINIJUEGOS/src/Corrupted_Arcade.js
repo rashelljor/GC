@@ -10,13 +10,13 @@ class MenuScene extends Phaser.Scene {
         this.load.image('soundBtn', 'assets/soundBtn.png');
         this.load.image('musicBtn', 'assets/musicBtn.png');
         this.load.image('settingsBtn', 'assets/settingsBtn.png');
-        this.load.image('titleSha', 'assets/titleSha.png');
-        this.load.image('maintitle', 'assets/maintitle.png');
+        this.load.image('maintitle', 'assets/title.png');
+        this.load.image('backBtn', 'assets/backBtn.png');
     }
 
     create() {
         this.add.image(640, 360, 'menuBg').setDisplaySize(1200, 720);
-        this.add.image(640, 100, 'maintitle').setScale(0.15);
+        this.add.image(220, 90, 'maintitle').setScale(0.3);
         this.add.image(1190, 240, 'soundBtn').setScale(0.15);
         this.add.image(1190, 145, 'musicBtn').setScale(0.15);
         this.add.image(1190, 50, 'settingsBtn').setScale(0.15);
@@ -25,8 +25,19 @@ class MenuScene extends Phaser.Scene {
     playBtn.on('pointerdown', () => {
         this.scene.start('GameScene');
     });
-        
+
+    // Botón para volver a prueba.html
+    const backBtn = this.add.image(1280 - 90, 720 * 0.9, 'backBtn') // right: 0, bottom: 20%
+        .setScale(0.2) // Ajusta el tamaño aquí
+        .setInteractive()
+        .setDepth(20);
+
+    backBtn.on('pointerdown', () => {
+        window.location.href = 'prueba.html';
+    });
     }
+        
+    
 }
 
 class GameScene extends Phaser.Scene {

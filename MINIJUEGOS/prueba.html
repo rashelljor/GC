@@ -42,6 +42,23 @@
                 left: 680px; /* Distancia desde la parte izquierda */
             }
 
+            .btn-back-menu {
+                position: fixed;
+                left:0;
+                bottom: 0;
+                z-index: 2000;
+                /* Opcional: agrega un poco de margen si no quieres que esté pegado al borde */
+                margin: 20px;
+            }
+            .btn-back-menu img {
+                width: 100px;   /* Cambia este valor para ajustar el tamaño */
+                height: auto;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .btn-back-menu img:hover {
+                transform: scale(1.08);
+            }
         </style>
     </head>
 
@@ -152,6 +169,10 @@
             <audio id="musicaDeFondo" autoplay loop>
                 <source src="img/MUSICA-FONDO.mp3" type="audio/mp3">
             </audio>
+
+            <a href="main menu.html" class="btn-back-menu">
+                <img src="assets/backBtn.png" alt="Volver al menú" />
+                </a>
 
             <script>
                 var music = document.getElementById("musicaDeFondo");

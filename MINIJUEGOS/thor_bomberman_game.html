@@ -7,6 +7,27 @@
     <link rel="icon" type="image/x-icon" href="img/star.png" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<style>
+  .btn-back-menu {
+    position: fixed;
+    left: 0;
+    top: 2%;
+    z-index: 2000;
+    /* Opcional: agrega un poco de margen si no quieres que esté pegado al borde */
+    margin: 20px;
+  }
+  .btn-back-menu img {
+    width: 100px;   /* Cambia este valor para ajustar el tamaño */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .btn-back-menu img:hover {
+    transform: scale(1.08);
+  }
+</style>
+
 <body>
     <div class="game-container">
         <div class="game-header">
@@ -31,7 +52,9 @@
             <p>¡Las paredes destructibles cambian de posición en cada nivel!</p>
         </div>
     </div>
-
+    <a href="prueba.html" class="btn-back-menu">
+        <img src="img/backBtn.png" alt="Volver al menú" />
+        </a>
     <script src="js/game1.js"></script>
 </body>
 </html>
