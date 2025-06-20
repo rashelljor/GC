@@ -36,13 +36,9 @@ body {
     /* Organiza los hijos verticalmente */
     justify-content: space-between;
     /* Alinea hijos al principio y al final */
+    padding-bottom: 40px
 }
 
-/* Estilos para la imagen */
-.imagen {
-    width: 180px;
-    height: auto;
-}
 
 /* Estilos para el botón */
 .boton {
@@ -53,6 +49,7 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
+    padding-bottom: 40px;
 }
 
 .dialogo-modal-arriba-derecha {
