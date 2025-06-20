@@ -17,7 +17,6 @@ class MenuScene extends Phaser.Scene {
     create() {
         this.add.image(640, 360, 'menuBg').setDisplaySize(1200, 720);
         this.add.image(640, 100, 'maintitle').setScale(0.15);
-        this.add.image(640, 200, 'titleSha').setScale(0.15);
         this.add.image(1190, 240, 'soundBtn').setScale(0.15);
         this.add.image(1190, 145, 'musicBtn').setScale(0.15);
         this.add.image(1190, 50, 'settingsBtn').setScale(0.15);
