@@ -36,7 +36,7 @@ let imagenAlienigena;
 let alienFilas = 2;
 let alienColumnas = 3;
 let contadorAlien = 0; // número de alienígenas a derrotar
-let velocidadAlienX = 1; // velocidad de movimiento de los alienígenas
+let velocidadAlienX = 0.9; // velocidad de movimiento de los alienígenas
 
 // Balas
 let balas = [];
