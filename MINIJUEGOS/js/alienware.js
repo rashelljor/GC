@@ -1,7 +1,7 @@
 // Cargar el recurso CSS del tablero
 // tablero
-let tileSize = 48;
-let rows = 16;
+let tileSize = 44;
+let rows = 14;
 let columns = 16;
 
 let board;
