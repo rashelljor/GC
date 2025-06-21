@@ -1,12 +1,12 @@
 // Lienzo
 let tablero;
-let anchoTablero = 800;
-let altoTablero = 450;
+let anchoTablero = 1200;
+let altoTablero = 600;
 let contexto;
 
 // Cohete
-let anchoCohete = 85; // Relación anchura/altura
-let altoCohete = 40;
+let anchoCohete = 100; // Relación anchura/altura
+let altoCohete = 55;
 let posXCohete = anchoTablero / 8;
 let posYCohete = altoTablero / 2;
 let imgCohete;
