@@ -55,6 +55,9 @@ window.onload = function () {
     imgTuberiaInferior = new Image();
     imgTuberiaInferior.src = "../img/bottompipe.png";
 
+    imgGameOver = new Image();
+    imgGameOver.src = "../assets/gameoverrocket.png";
+
     requestAnimationFrame(actualizar);
     setInterval(colocarTuberias, 1500); // Cada 1.5 segundos
     document.addEventListener("keydown", moverCohete);
@@ -62,50 +65,65 @@ window.onload = function () {
 
 function actualizar() {
     requestAnimationFrame(actualizar);
-    if (finJuego) {
-        return;
-    }
     contexto.clearRect(0, 0, tablero.width, tablero.height);
 
-    // Cohete
-    velocidadY += gravedad;
-    cohete.y = Math.max(cohete.y + velocidadY, 0); // Aplicar gravedad a la posición actual del cohete, limitando que no pase la parte superior del lienzo
-    contexto.drawImage(imgCohete, cohete.x, cohete.y, cohete.ancho, cohete.alto);
+    if (!finJuego) {
+        // Actualiza el juego normalmente
+        // Cohete
+        velocidadY += gravedad;
+        cohete.y = Math.max(cohete.y + velocidadY, 0);
+        contexto.drawImage(imgCohete, cohete.x, cohete.y, cohete.ancho, cohete.alto);
 
-    if (cohete.y > tablero.height) {
-        finJuego = true;
-    }
-
-    // Barreras
-    for (let i = 0; i < tuberiaArray.length; i++) {
-        let tuberia = tuberiaArray[i];
-        tuberia.x += velocidadX;
-        contexto.drawImage(tuberia.img, tuberia.x, tuberia.y, tuberia.ancho, tuberia.alto);
-
-        if (!tuberia.pasada && cohete.x > tuberia.x + tuberia.ancho) {
-            puntuacion += 0.5; // 0.5 porque hay 2 tubos, así que 0.5 * 2 = 1, 1 por cada conjunto de tubos
-            tuberia.pasada = true;
-        }
-
-        if (detectarColision(cohete, tuberia)) {
+        if (cohete.y > tablero.height) {
             finJuego = true;
         }
+
+        // Barreras
+        for (let i = 0; i < tuberiaArray.length; i++) {
+            let tuberia = tuberiaArray[i];
+            tuberia.x += velocidadX;
+            contexto.drawImage(tuberia.img, tuberia.x, tuberia.y, tuberia.ancho, tuberia.alto);
+
+            if (!tuberia.pasada && cohete.x > tuberia.x + tuberia.ancho) {
+                puntuacion += 0.5;
+                tuberia.pasada = true;
+            }
+
+            if (detectarColision(cohete, tuberia)) {
+                finJuego = true;
+            }
+        }
+
+        // Limpiar barreras
+        while (tuberiaArray.length > 0 && tuberiaArray[0].x < -anchoTuberia) {
+            tuberiaArray.shift();
+        }
     }
 
-    // Limpiar barreras
-    while (tuberiaArray.length > 0 && tuberiaArray[0].x < -anchoTuberia) {
-        tuberiaArray.shift(); // Elimina el primer elemento del array
-    }
-
-    // Puntuación
+    // Puntuación (siempre visible)
     contexto.fillStyle = "white";
-    contexto.font = "45px sans-serif";
+    contexto.font = "35px sans-serif";
     contexto.fillText(puntuacion, 5, 45);
 
     if (finJuego) {
-        contexto.fillText("GAME OVER", 5, 90);
+        contexto.fillStyle = "rgba(0,0,0,0.5)";
+        contexto.fillRect(0, 0, tablero.width, tablero.height);
+
+        let escala = 0.5;
+        let imgW = tablero.width;
+        let imgH = imgGameOver.height * (imgW / imgGameOver.width);
+        let imgX = 0;
+        let imgY = tablero.height/2 - imgH/2;
+
+        contexto.drawImage(imgGameOver, imgX, imgY, imgW, imgH);
+
+        contexto.fillStyle = "#fff";
+        contexto.font = "32px sans-serif";
+        contexto.fillText(`Your Score: ${puntuacion}`, tablero.width/2 - 100, tablero.height/2 -37);
+
     }
 }
+
 
 function colocarTuberias() {
     if (finJuego) {
@@ -137,6 +155,11 @@ function colocarTuberias() {
 }
 
 function moverCohete(e) {
+    if (e.code == "KeyH") {
+        window.top.location.href = "../prueba.html";
+        return;
+    }
+
     if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
         // Saltar
         velocidadY = -2;

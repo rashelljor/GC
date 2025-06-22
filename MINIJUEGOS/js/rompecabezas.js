@@ -24,6 +24,12 @@ window.onload = function () {
 
             document.getElementById("tablero").append(casilla);
         }
+
+        document.addEventListener("keydown", function(e) {
+        if (e.code == "KeyH") {
+            window.top.location.href = "../prueba.html";
+            }
+        });
     }
 
     // Piezas
@@ -57,6 +63,7 @@ window.onload = function () {
     }
 }
 
+
 // ARRASRE DE PIEZAS
 function dragStart() {
     currTile = this; // 'this' hace referencia a la imagen actualmente seleccionada
@@ -79,6 +86,7 @@ function dragDrop() {
 }
 
 function dragEnd() {
+    
     if (currTile.src.includes("blank")) {
         return;
     }

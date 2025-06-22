@@ -150,6 +150,11 @@ function actualizar() {
 }
 
 function moverNave(e) {
+    if (e.code == "KeyH") {
+        window.top.location.href = "../prueba.html";
+        return;
+    }
+
     if (finJuego) {
         return;
     }

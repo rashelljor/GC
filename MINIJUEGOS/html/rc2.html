@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +8,31 @@
     <script src="../js/rompecabezas.js"></script>
 </head>
 
+<style>
+
+    body {
+    background-color: black;
+    background-image: url("../img/dragfondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+    .img-superior-izquierda {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 200px; /* Ajusta el tamaño si lo deseas */
+    height: auto;
+    border-radius: 12px;
+    z-index: 10;
+}
+
+</style>
+
 <body bgcolor="#666666">
     <br>
+    <img src="../img/hBtn.png" alt="Decoración" class="img-superior-izquierda">
     <div id="tablero"></div>
     <h2>Turnos: <span id="turnos">0</span></h2>
     <div id="piezas"></div>

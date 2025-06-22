@@ -7,7 +7,45 @@
     <link rel="stylesheet" href="../css/alienware.css">
     <script src="../js/alienware.js"></script>
 </head>
-<body bgcolor="#666666">
+
+<style>
+body {
+    background-color: black;
+    background-image: url("../img/pikafondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: right;   /* Centra horizontalmente */
+    align-items: center;       /* Centra verticalmente */
+    height: 100vh;             /* Ocupa toda la altura de la ventana */
+    margin: 0;
+    padding-left: 40%;
+    padding-right: 10%;
+    position: relative;
+}
+
+canvas {
+    border: 5px solid #0074D9; /* Azul */
+    border-radius: 12px;        /* Opcional: bordes redondeados */
+    height: 90vh;  
+    width: auto;
+}
+
+.img-superior-izquierda {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 200px; /* Ajusta el tamaño si lo deseas */
+    height: auto;
+    border-radius: 12px;
+    z-index: 10;
+}
+
+</style>
+
+<body>
+    <img src="../img/hBtn.png" alt="Decoración" class="img-superior-izquierda">
     <canvas id="tablero"></canvas>
 </body>
 </html>
